@@ -9,11 +9,25 @@ gulp.task("buildCSS", function(){
   .pipe(sass())
   .pipe(cssmin())
   .pipe(gulp.dest("app/css"))
-})
+});
 
 gulp.task("pug", function(){
-  return gulp.src("app/pug/*pug")
+  return gulp.src("app/pug/**/*.pug")
   .pipe(pug())
   .pipe(gulp.dest("app"))
-})
+});
 
+gulp.task("browser-sync", function(){
+  browserSync({
+    server: {
+      baseDir: "app"
+    },
+    notify: false
+  });
+});
+
+gulp.task("watch", ["browser-sync", "buildCSS", "pug"], function(){
+  gulp.watch("app/sass/*.sass", ["buildCSS"]);
+  gulp.watch("app/pug/**/*.pug", ["pug"]);
+  gulp.watch("app/**/*html", browserSync.reload);
+});
