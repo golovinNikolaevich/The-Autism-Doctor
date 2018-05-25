@@ -17,7 +17,7 @@ gulp.task("pug", function(){
   .pipe(gulp.dest("app"))
 });
 
-gulp.task("serv", function(){
+gulp.task("server", function(){
   browserSync({
     server: {
       port: 9000,
