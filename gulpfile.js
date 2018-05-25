@@ -9,7 +9,7 @@ gulp.task("buildCSS", function(){
   .pipe(sass())
   .pipe(cssmin())
   .pipe(gulp.dest("app/css"))
-});
+})
 
 gulp.task("pug", function(){
   return gulp.src("app/pug/**/*.pug")
@@ -17,17 +17,12 @@ gulp.task("pug", function(){
   .pipe(gulp.dest("app"))
 });
 
-gulp.task("browser-sync", function(){
+gulp.task("serv", function(){
   browserSync({
     server: {
+      port: 9000,
       baseDir: "app"
-    },
-    notify: false
+    }
   });
-});
-
-gulp.task("watch", ["browser-sync", "buildCSS", "pug"], function(){
-  gulp.watch("app/sass/*.sass", ["buildCSS"]);
-  gulp.watch("app/pug/**/*.pug", ["pug"]);
-  gulp.watch("app/**/*html", browserSync.reload);
+  gulp.watch("app/**/**[.sass, .pug, .html]", ["buildCSS", "pug"]).on("change", browserSync.reload);
 });

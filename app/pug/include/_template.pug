@@ -1,3 +1,5 @@
+include _mixins.pug
+
 <!DOCTYPE html>
 html(lang="en")
   head
@@ -7,6 +9,9 @@ html(lang="en")
     block title
       title The Autism Doctor
     block link
-      link(rel="stylesheet", href="css/main.css")
+      link(rel="stylesheet", href="css/style.css")
   body
-    block body
+    block header
+    block content
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    script(src="javascript/menu.js")

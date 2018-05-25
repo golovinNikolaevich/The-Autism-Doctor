@@ -1,4 +1,25 @@
 extends _template.pug
 
-block body
-  p ssss
+block header
+  header#header
+    .header.wrap
+      a(href="#").header-logo
+        h1 Думай вместе
+        p С Ириной Кулиш
+      .navigation
+        a(href="#").menu-link
+          span
+        .menu
+          nav
+            +navigation__item("#", "Главная")
+            +navigation__item("#", "Блог")
+            +navigation__item("#", "Расписание")
+            +navigation__item("#", "Отзывы")
+            +navigation__item("#", "Об авторе")
+      .search-and-language
+        form(action="get")
+          .search
+            label(for="")
+            input(type="search" placeholder="Например аутизм")
+            a(href="#") Ру
+block content
