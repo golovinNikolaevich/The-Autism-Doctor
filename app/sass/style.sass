@@ -33,6 +33,20 @@ input[type="search"],
 input[type="number"]
   padding: 8px 15px
   border: 1px solid lightgrey
+  position: relative
+
+label
+  display: block
+  &:after
+    content: ''
+    display: block
+    width: 15px
+    height: 15px
+    background: url("../img/search.svg") center center no-repeat
+    position: absolute
+    top: 13px
+    right: 10px
+    z-index: 1
 
 input::-webkit-search-cancel-button,
 input::-webkit-search-results-button,

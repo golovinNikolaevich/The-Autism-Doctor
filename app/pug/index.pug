@@ -28,19 +28,26 @@ block content
                 | его мировосприятия.
           form(action="get").online-course__form-entry
             .name
-              input(type="text" placeholder="ФИО")
+              .submit__input
+                label(for="name")
+                input(type="text" id="name" placeholder="ФИО")
               p уже идут
                 span 1124
                 | человек
             .submit
-              input(type="number" placeholder="Ваш телефон")
-              input(type="text" placeholder="Ваш электронный адрес")
-              input(type="button" value="Записаться").button
+              .submit__input
+                label(for="num")
+                input(type="number" id="num" placeholder="Ваш телефон")
+              .submit__input
+                label(for="email")
+                input(type="text" id="email" placeholder="Ваш электронный адрес")
+              .submit__input
+                input(type="button" value="Записаться").button
       // Article's
-      article.new_articles
+      article.new-articles
         h3 Свежие статьи
-        .new_articles__all
-          .new_articles__block
+        .new-articles__all
+          .new-articles__block
             img(src="../img/article_event/article_1.png", alt="Новость")
             h4 Безглагольность как способ мировосприятия
             p Продолжу рассказ об особенностях речи Никиты. Безглагольность — 
@@ -49,7 +56,7 @@ block content
             .comment-like
               .comment 46
               .like 107
-          .new_articles__block
+          .new-articles__block
             img(src="../img/article_event/article_2.png", alt="Новость")
             h4 Не хочу быть призовой лошадью
             p Продолжу рассказ об особенностях речи Никиты. Безглагольность — это не просто 
@@ -58,7 +65,7 @@ block content
             .comment-like
               .comment 46
               .like 107
-          .new_articles__block
+          .new-articles__block
             img(src="../img/article_event/article_3.png", alt="Новость")
             h4 У него нет второго шанса на первое впечатление
             p Продолжу рассказ об особенностях речи Никиты. Безглагольность — это не просто 

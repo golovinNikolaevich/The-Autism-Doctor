@@ -4,6 +4,7 @@
   flex-direction: column
   align-items: center
   h2
+    width: 100%
     margin-bottom: 15px
   p
     line-height: 1.4rem
@@ -14,6 +15,7 @@
     margin-top: 15px
 
 .more-link
+  max-width: 135px;
   display: inline-block
   padding: 10px 0 5px
   color: black
@@ -44,6 +46,7 @@
     padding: 5px
     background-color: #e4eff4
   .date
+    min-width: 165px
     display: flex
     flex-direction: column
     align-items: center
@@ -83,10 +86,15 @@
     flex-direction: column
     align-items: center
   .button
-    margin-bottom: 0
+    margin: 4px auto 0
+  .submit__input
+    width: 100%
+    position: relative
+  // .name label:after,
+  // .submit label:after
 
 // Article's
-.new_articles
+.new-articles
   margin: 20px 0
   &__all
     margin: 20px 0
@@ -144,15 +152,23 @@
 // Event's
 .near-event
   &__block
+    max-width: 500px
+    margin: 10px auto
+  &__text
+    & p:first-child
+      color: grey
   img
     max-width: 300px
+    max-height: 300px
   &__date-duration
+    margin: 10px 0
     display: flex
     flex-direction: column
     span:nth-child(1),
     span:nth-child(2),
     span:nth-child(3)
-      padding-left: 30px
+      margin-bottom: 5px
+      padding-left: 25px
       position: relative
     span:nth-child(1):before,
     span:nth-child(2):before,
@@ -164,8 +180,20 @@
       background: black
       position: absolute
       left: 0
+      background: url("../img/event_icon.png") no-repeat center center
+      background-size: 6rem
+    span:nth-child(1):before
+      background-position: -10px -10px
+    span:nth-child(2):before
+      background-position: -41px -10px
+    span:nth-child(3):before
+      background-position: -69px -10px
+  h4
+    margin: 10px 0
+  .button
+    margin: 0 auto
 
-@media screen and (min-width: 568px)
+@media screen and (min-width: 540px)
   .online-course
     margin-top: 15px
   .briefly-more
@@ -177,14 +205,64 @@
       margin-right: 0
 
 @media screen and (min-width: 640px)
-  .online-course__description
-    background: url("../img/online-course/illustration_1.png") right bottom, url("../img/online-course/illustration_2.png") right top, url("../img/online-course/illustration_3.png") 10px bottom, url("../img/online-course/illustration_4.png") 50px 50px, url("../img/online-course/illustration_5.png") center center
-    background-color: #e4eff4
-    background-size: 80px, 80px, 75px, 55px, 110px
-    background-repeat: no-repeat
+  .briefly-more
+    .more
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+    h2
+      max-width: 300px
+    p
+      font-size: 1.2rem
 
-  .new_articles__block
+  .online-course
+    &__description
+      padding: 20px
+      background: url("../img/online-course/illustration_1.png") right bottom, url("../img/online-course/illustration_2.png") right top, url("../img/online-course/illustration_3.png") 10px bottom, url("../img/online-course/illustration_4.png") 50px 50px, url("../img/online-course/illustration_5.png") center center
+      background-color: #e4eff4
+      background-size: 80px, 80px, 75px, 55px, 110px
+      background-repeat: no-repeat
+    &__description-more
+      display: flex
+      align-items: center
+    .date
+      margin: 0 30px 0 0
+
+  .near-event
+    &__block
+      max-width: 100%
+      display: flex
+    &__about
+      margin-left: 10px
+    &__date-duration
+      flex-direction: unset
+      justify-content: space-between
+      span
+        margin-right: 5px
+    &__text-enroll
+      height: 255px
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+    &__text
+      margin-top: 15px
+
+  .new-articles__block
     max-width: 300px
+
+@media screen and (min-width: 740px)
+  .online-course
+    .name,
+    .submit
+      flex-direction: unset
+    .submit__input
+      margin-right: 15px
+      &:last-of-type
+        margin: 0
+    input
+      margin: 3px 0 0
+      padding: 11px 15px
+
 
 @media screen and (min-width: 968px)
   .briefly-more
