@@ -4,13 +4,13 @@
 .header
   display: flex
   flex-direction: column
-  align-items: flex-end
-  padding: 5px 0 8px
+  align-items: flex-start
+  padding: 5px 5px 8px
   border-bottom: 1px solid #dadada
 
 .header-logo
   display: block
-  min-width: 230px;
+  min-width: 230px
   color: black
   h1
     font-family: Gilroy-ExtraBold
@@ -31,7 +31,7 @@
     box-shadow: 1px 1px 10px rgba(0, 0, 0,.4)
     position: fixed
     top: 10px
-    left: 10px
+    right: 10px
     z-index: 999
     span,
     span:before,
@@ -68,16 +68,17 @@
     flex-direction: column
     width: 100vw
     height: 100vh
-    background: rgba(0, 122, 158, 0.9)
+    background: rgba(115, 149, 165, 0.9)
     line-height: 4
     font-weight: 100
     transition: all .5s
     position: fixed
-    top: 0
-    left: -100vw
-    z-index: 998;
+    top: -100vh
+    left: 0
+    right: 0
+    z-index: 998
     &-active
-      left: 0
+      top: 0
     a
       display: block
       color: white
@@ -87,28 +88,22 @@
         background: rgba(255, 255, 255, .4)
 
 .search
-  min-width: 230px;
+  min-width: 230px
+  margin-top: 5px
   position: relative
   label
     display: block
     &:after
-      content: '';
-      display: block;
-      width: 15px;
-      height: 15px;
-      background: url(../img/search.svg) center center no-repeat;
-      position: absolute;
-      right: 35px;
-      top: 9px;
-  input[type="search"]
-    padding: 7px 15px;
-    border: 1px solid lightgrey;
+      content: ''
+      display: block
+      width: 15px
+      height: 15px
+      background: url("../img/search.svg") center center no-repeat
+      position: absolute
+      right: 35px
+      top: 9px
   a
     margin-left: 10px
-  input::-webkit-search-cancel-button,
-  input::-webkit-search-results-button,
-  input::-webkit-search-results-decoration
-    display: none
 
 @media screen and (min-width: 375px)
   .header
@@ -117,7 +112,7 @@
 @media screen and (min-width: 640px)
   .header
     flex-direction: unset
-    justify-content: center
+    justify-content: space-around
     width: 100%
     min-width: 470px
 
@@ -125,7 +120,7 @@
 @media screen and (min-width: 968px)
   .header
     justify-content: space-between
-    padding: 15px 5px;
+    padding: 15px 5px
 
   .navigation
     .menu-link
@@ -149,5 +144,3 @@
       display: flex
       justify-content: space-around
       min-width: 500px
-
-

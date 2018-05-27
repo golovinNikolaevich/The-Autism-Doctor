@@ -6,6 +6,10 @@
   font-family: SavoyeLetPlain
   src: url("../fonts/SavoyeLetPlain.ttf")
 
+@font-face
+  font-family: AnselmSansLight
+  src: url("../fonts/AnselmSansLight.otf")
+
 *
   margin: 0
   padding: 0
@@ -18,14 +22,43 @@ body
   list-style: none
   overflow-x: hidden
 
+p, a
+  font-family: AnselmSansLight
+
 a
   text-decoration: none
+
+input[type="text"],
+input[type="search"],
+input[type="number"]
+  padding: 8px 15px
+  border: 1px solid lightgrey
+
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration
+  margin-right: 10px
+
+input::placeholder
+  color: lightgrey
+
+input:hover,
+input:active,
+input:focus
+  outline: none
 
 .wrap
   width: 100%
   max-width: 1425px
   margin: 0 auto
   padding: 0 5px
+
+.button
+  padding: 10px
+  border: none
+  background: #7395a5
+  font-size: 1rem
+  color: white
   
 @import "_header.sass"
 @import "_main.sass"
