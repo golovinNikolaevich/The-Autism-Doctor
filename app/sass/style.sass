@@ -54,11 +54,20 @@ input:focus
   padding: 0 5px
 
 .button
+  display: block
+  width: 100%
+  max-width: 220px
   padding: 10px
   border: none
   background: #7395a5
   font-size: 1rem
+  font-weight: bold
+  text-align: center
+  cursor: pointer
   color: white
+  transition: box-shadow .2s linear
+  &:hover
+    box-shadow: 0 0 4px grey
   
 @import "_header.sass"
 @import "_main.sass"

@@ -12,7 +12,7 @@ gulp.task("buildCSS", function(){
 })
 
 gulp.task("pug", function(){
-  return gulp.src("app/pug/**/*.pug")
+  return gulp.src("app/pug/*.pug")
   .pipe(pug())
   .pipe(gulp.dest("app"))
 });

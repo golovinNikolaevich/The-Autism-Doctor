@@ -3,6 +3,7 @@ extends _include/_header.pug
 block content
   main#content
     .content.wrap
+      // About irina
       .briefly-more
         .more
           h2 Аутизм и аутоподобные состояния. Размышления о случаях из практики
@@ -12,24 +13,94 @@ block content
             | «слово на букву А». 25 лет работы с аутичными детьми и их родителями — это 25 лет моей жизни.
           a(href="#").more-link Узнать подробнее 
         img(src="img/Irina-Koolish.jpg", alt="Фото: Ирина Кулиш").photo
-      .online-course
-        .online-course__description
-          h2 Регистрируйтесь на онлайн-курс «Аутизм и аутоподобные состояния»
-          .online-course__description-more
-            .date
-              p 4-7 мая
+      block online-course
+        // Online-course-enroll
+        .online-course
+          .online-course__description
+            h2 Регистрируйтесь на онлайн-курс «Аутизм и аутоподобные состояния»
+            .online-course__description-more
+              .date
+                p 4-7 мая
+                span 12 лекций по 1,5 часа
+              p Курс для родителей аутичных детей и психологов, начинающих работу с аутичными детьми. 
+                | Продолжу рассказ об особенностях речи Никиты. Безглагольность — 
+                | это не просто его речевое своеобразие, это отражение сути 
+                | его мировосприятия.
+          form(action="get").online-course__form-entry
+            .name
+              input(type="text" placeholder="ФИО")
+              p уже идут
+                span 1124
+                | человек
+            .submit
+              input(type="number" placeholder="Ваш телефон")
+              input(type="text" placeholder="Ваш электронный адрес")
+              input(type="button" value="Записаться").button
+      // Article's
+      article.new_articles
+        h3 Свежие статьи
+        .new_articles__all
+          .new_articles__block
+            img(src="../img/article_event/article_1.png", alt="Новость")
+            h4 Безглагольность как способ мировосприятия
+            p Продолжу рассказ об особенностях речи Никиты. Безглагольность — 
+              | это не просто его речевое своеобразие, это отражение сути его мировосприятия.
+            a(href="#").more-link Читать
+            .comment-like
+              .comment 46
+              .like 107
+          .new_articles__block
+            img(src="../img/article_event/article_2.png", alt="Новость")
+            h4 Не хочу быть призовой лошадью
+            p Продолжу рассказ об особенностях речи Никиты. Безглагольность — это не просто 
+              | его речевоесвоеобразие, это отражение сути его мировосприятия.
+            a(href="#").more-link Читать
+            .comment-like
+              .comment 46
+              .like 107
+          .new_articles__block
+            img(src="../img/article_event/article_3.png", alt="Новость")
+            h4 У него нет второго шанса на первое впечатление
+            p Продолжу рассказ об особенностях речи Никиты. Безглагольность — это не просто 
+              | его речевое своеобразие, это отражение сути его мировосприятия.
+            a(href="#").more-link Читать
+            .comment-like
+              .comment 46
+              .like 107
+        a(href="#").button Читать блог
+      // Event's
+      article.near-event
+        h3 Ближайщие события
+        .near-event__block
+          img(src="../img/article_event/event_1.png", alt="Событие")
+          .near-event__about
+            .near-event__date-duration
+              span 4-7 мая
               span 12 лекций по 1,5 часа
-            p Курс для родителей аутичных детей и психологов, начинающих работу с аутичными детьми. 
-              | Продолжу рассказ об особенностях речи Никиты. Безглагольность — 
-              | это не просто его речевое своеобразие, это отражение сути 
-              | его мировосприятия.
-        form(action="get").online-course__form-entry
-          .name
-            input(type="text" placeholder="ФИО")
-            p уже идут
-              span 1124
-              | человек
-          .submit
-            input(type="number" placeholder="Ваш телефон")
-            input(type="text" placeholder="Ваш электронный адрес")
-            input(type="button" value="Записаться").button
+              span Онлайн
+            .near-event__text-enroll
+              .near-event__text
+                p Курс
+                h4 Как помочь ребенку справиться со страхами
+                p Курс для родителей аутичных детей и психологов, начинающих работу с аутичными детьми. 
+                  | Продолжу рассказ об особенностях речи Никиты. Безглагольность — это не просто его 
+                  | речевое своеобразие.
+              .near-event__enroll
+                a(href="#").button Записаться
+        .near-event__block
+          img(src="../img/article_event/article_2.png", alt="Событие")
+          .near-event__about
+            .near-event__date-duration
+              span 4-7 мая
+              span 12 лекций по 1,5 часа
+              span Онлайн
+            .near-event__text-enroll
+              .near-event__text
+                p Курс
+                h4 Как помочь ребенку справиться со страхами
+                p Курс для родителей аутичных детей и психологов, начинающих работу с аутичными детьми. 
+                  | Продолжу рассказ об особенностях речи Никиты. Безглагольность — это не просто его 
+                  | речевое своеобразие.
+              .near-event__enroll
+                a(href="#").button Записаться
+        a(href="#").button Смотреть раписание

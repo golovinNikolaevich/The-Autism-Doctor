@@ -1,3 +1,4 @@
+// About Irina
 .briefly-more
   display: flex
   flex-direction: column
@@ -6,37 +7,65 @@
     margin-bottom: 15px
   p
     line-height: 1.4rem
-  .more-link
-    display: inline-block
-    padding: 10px 0 5px
-    color: black
-    position: relative
-  .more-link:hover::after
-    content: ''
-    display: inline-block
-    height: 3px
-    background: #7395a5
-    position: absolute
-    bottom: -4px
-    animation: link-more 0.4s ease-in-out
-    animation-fill-mode: forwards
   .photo
     width: 100%
     height: 100%
     max-width: 340px
     margin-top: 15px
 
+.more-link
+  display: inline-block
+  padding: 10px 0 5px
+  color: black
+  position: relative
+  &:after
+    content: ''
+    display: inline-block
+    width: 100%
+    height: 3px
+    background: #7395a5
+    position: absolute
+    left: 0
+    bottom: -4px
+  &:hover::after
+    animation: link-more 0.5s ease-in-out
+    animation-fill-mode: forwards
+
 @keyframes link-more
   0%
-    width: 0
-  100%
     width: 100%
+  100%
+    width: 20%
 
+// Online-course-enroll
 .online-course
+  border: 1px solid #dadada
   &__description
     padding: 5px
-    background: #e4eff4
+    background-color: #e4eff4
+  .date
+    display: flex
+    flex-direction: column
+    align-items: center
+    margin: 10px 0
+    p
+      height: 35px
+      padding-left: 50px
+      font-weight: bold
+      font-size: 2rem
+      position: relative
+    p:before
+      content: ''
+      display: block
+      width: 30px
+      height: 32px
+      background: url("../img/calendar.png") no-repeat center
+      background-size: contain
+      position: absolute
+      top: 0
+      left: 0
   &__form-entry
+    padding: 15px
     p
       text-align: center
     span
@@ -46,13 +75,99 @@
       position:  relative
       top: 3px
     input
+      width: 100%
       margin: 4px 0
   .name,
   .submit
     display: flex
     flex-direction: column
+    align-items: center
+  .button
+    margin-bottom: 0
+
+// Article's
+.new_articles
+  margin: 20px 0
+  &__all
+    margin: 20px 0
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+  &__block
+    max-width: 500px
+    margin: 0 auto
+    display: flex
+    flex-direction: column
+    img
+      width: 300px
+      height: 250px
+      object-fit: cover
+    h4
+      width: 100%
+      height: 45px
+      margin: 10px 0
+      text-align: left
+    p
+      margin-bottom: 10px
+    a
+      max-width: 50px
+      font-weight: bold
+      color: black
+  .button
+    margin: 0 auto
+  .comment-like
+    max-width: 150px
+    margin: 10px 0 10px -5px
+    display: flex
+    justify-content: space-around
+  .comment,
+  .like
+    position: relative
+  .comment:before,
+  .like:before
+    content: ''
+    display: block
+    width: 15px
+    height: 15px
+    background-repeat: no-repeat
+    background-position: center center
+    position: absolute
+    top: 2px;
+    left: -20px;
+  .comment:before
+    background: url("../img/comment.svg")
+    background-size: contain;
+  .like:before
+    background: url("../img/thumbsUp.svg")
+    background-size: contain;
+
+// Event's
+.near-event
+  &__block
+  img
+    max-width: 300px
+  &__date-duration
+    display: flex
+    flex-direction: column
+    span:nth-child(1),
+    span:nth-child(2),
+    span:nth-child(3)
+      padding-left: 30px
+      position: relative
+    span:nth-child(1):before,
+    span:nth-child(2):before,
+    span:nth-child(3):before
+      content: ''
+      display: block
+      width: 25px
+      height: 25px
+      background: black
+      position: absolute
+      left: 0
 
 @media screen and (min-width: 568px)
+  .online-course
+    margin-top: 15px
   .briefly-more
     flex-direction: unset
     align-items: unset
@@ -60,6 +175,16 @@
       max-width: 250px
       margin: 10px
       margin-right: 0
+
+@media screen and (min-width: 640px)
+  .online-course__description
+    background: url("../img/online-course/illustration_1.png") right bottom, url("../img/online-course/illustration_2.png") right top, url("../img/online-course/illustration_3.png") 10px bottom, url("../img/online-course/illustration_4.png") 50px 50px, url("../img/online-course/illustration_5.png") center center
+    background-color: #e4eff4
+    background-size: 80px, 80px, 75px, 55px, 110px
+    background-repeat: no-repeat
+
+  .new_articles__block
+    max-width: 300px
 
 @media screen and (min-width: 968px)
   .briefly-more
