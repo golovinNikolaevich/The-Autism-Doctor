@@ -15,36 +15,7 @@ block content
         img(src="img/Irina-Koolish.jpg", alt="Фото: Ирина Кулиш").photo
       block online-course
         // Online-course-enroll
-        .course-wrap
-          .online-course
-            .online-course__description
-              h2 Регистрируйтесь на онлайн-курс «Аутизм и аутоподобные состояния»
-              .online-course__description-more
-                .date
-                  p 4-7 мая
-                  span 12 лекций по 1,5 часа
-                p Курс для родителей аутичных детей и психологов, начинающих работу с аутичными детьми. 
-                  | Продолжу рассказ об особенностях речи Никиты. Безглагольность — 
-                  | это не просто его речевое своеобразие, это отражение сути 
-                  | его мировосприятия.
-            form(action="get").online-course__form-entry
-              .submit
-                .submit__input
-                  label(for="name" class="user")
-                  input(type="text" id="name" placeholder="ФИО")
-                .submit__block
-                  .submit__input
-                    label(for="num" class="telephone")
-                    input(type="number" id="num" placeholder="Ваш телефон")
-                  .submit__input
-                    label(for="email" class="email")
-                    input(type="text" id="email" placeholder="Ваш электронный адрес")
-              .submit
-                .submit__input
-                  p уже идут
-                    span 1124
-                    | человек
-                  input(type="button" value="Записаться").button
+        +online-course
       // Article's
       article.new-articles
         h3 Свежие статьи
@@ -113,32 +84,26 @@ block content
               .near-event__enroll
                 a(href="#").button Записаться
         a(href="#").button Смотреть раписание
-    block aside
-      // Subscribe-category
-      .aside
-        .subscribe
-          h4 Подпишитесь на рассылку
-          p Получайте свежие статьи на ваш электронный адрес 
-          form(action="get")
-            input(type="email" placeholder="Ваш электронный адрес")
-            input(type="button" value="Подписаться").button
-        .category
-          h4 Рубрики
-          ul.category
-            +category__item("#", "Заметки из практики")
-            +category__item("#", "Развитие речи")
-            +category__item("#", "Развитие навыков")
-            +category__item("#", "Общение с ребенком")
-            +category__item("#", "Ребенок в коллективе")
-            +category__item("#", "Отношения в семье")
-            +category__item("#", "Методы, методики, подходы")
-            +category__item("#", "Аутизм в мире")
-        .min-article
-          h4 Популярные статьи
-          +min-article("img/article_event/article_min_1.png", "Статья", "Не хочу быть призовой лошадью", "46", "107")
-          +min-article("img/article_event/article_min_2.png", "Статья", "Не хочу быть призовой лошадью", "46", "107")
-          +min-article("img/article_event/article_min_3.png", "Статья", "Не хочу быть призовой лошадью", "46", "107")
-          +min-article("img/article_event/article_min_4.png", "Статья", "Не хочу быть призовой лошадью", "46", "107")
-          +min-article("img/article_event/article_min_5.png", "Статья", "Не хочу быть призовой лошадью", "46", "107")
-          .button Читать блог
-        .community
+    // Subscribe-category
+    .aside
+      +subscribe
+      .category
+        h4 Рубрики
+        ul.category
+          +category__item("#", "Заметки из практики")
+          +category__item("#", "Развитие речи")
+          +category__item("#", "Развитие навыков")
+          +category__item("#", "Общение с ребенком")
+          +category__item("#", "Ребенок в коллективе")
+          +category__item("#", "Отношения в семье")
+          +category__item("#", "Методы, методики, подходы")
+          +category__item("#", "Аутизм в мире")
+      .min-article
+        h4 Популярные статьи
+        +min-article("img/article_event/article_min_1.png", "Статья", "Не хочу быть призовой лошадью", "46", "107")
+        +min-article("img/article_event/article_min_2.png", "Статья", "Не хочу быть призовой лошадью", "46", "107")
+        +min-article("img/article_event/article_min_3.png", "Статья", "Не хочу быть призовой лошадью", "46", "107")
+        +min-article("img/article_event/article_min_4.png", "Статья", "Не хочу быть призовой лошадью", "46", "107")
+        +min-article("img/article_event/article_min_5.png", "Статья", "Не хочу быть призовой лошадью", "46", "107")
+        .button Читать блог
+      .community

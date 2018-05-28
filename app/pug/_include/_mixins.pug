@@ -17,3 +17,44 @@ mixin min-article(img, alt, h6, comment, like)
           = comment
         .like
           = like
+
+mixin online-course
+  .course-wrap
+  .online-course
+    .online-course__description
+      h2 Регистрируйтесь на онлайн-курс «Аутизм и аутоподобные состояния»
+      .online-course__description-more
+        .date
+          p 4-7 мая
+          span 12 лекций по 1,5 часа
+        p Курс для родителей аутичных детей и психологов, начинающих работу с аутичными детьми. 
+          | Продолжу рассказ об особенностях речи Никиты. Безглагольность — 
+          | это не просто его речевое своеобразие, это отражение сути 
+          | его мировосприятия.
+    form(action="get").online-course__form-entry
+      .submit
+        .submit__input
+          label(for="name" class="user")
+          input(type="text" id="name" placeholder="ФИО")
+        .submit__block
+          .submit__input
+            label(for="num" class="telephone")
+            input(type="number" id="num" placeholder="Ваш телефон")
+          .submit__input
+            label(for="email" class="email")
+            input(type="text" id="email" placeholder="Ваш электронный адрес")
+      .submit
+        .submit__input
+          p уже идут
+            span 1124
+            | человек
+          input(type="button" value="Записаться").button
+
+mixin subscribe
+  .aside
+  .subscribe
+    h4 Подпишитесь на рассылку
+    p Получайте свежие статьи на ваш электронный адрес 
+    form(action="get")
+      input(type="email" placeholder="Ваш электронный адрес")
+      input(type="button" value="Подписаться").button
