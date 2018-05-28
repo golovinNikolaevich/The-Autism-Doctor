@@ -2,3 +2,18 @@
 mixin navigation__item(link, name)
   li.navigation__item
     a(href= link).navigation__link= name
+
+mixin category__item(link, name)
+  li.category__item
+    a(href= link).category__link= name
+
+mixin min-article(img, alt, h6, comment, like)
+  .min-article__block
+    img(src= img, alt= alt)
+    .min-article__block-info
+      h6= h6
+      .comment-like
+        .comment
+          = comment
+        .like
+          = like
