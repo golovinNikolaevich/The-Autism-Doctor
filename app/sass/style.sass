@@ -10,6 +10,14 @@
   font-family: AnselmSansLight
   src: url("../fonts/AnselmSansLight.otf")
 
+@font-face
+  font-family: Cochin-Regular
+  src: url("../fonts/Cochin-Regular.ttf")
+
+@font-face
+  font-family: MyriadPro-Regular
+  src: url("../fonts/MyriadPro-Regular.otf")
+
 *
   margin: 0
   padding: 0
@@ -28,7 +36,8 @@ ul
   list-style: none
 
 p, a
-  font-family: AnselmSansLight
+  font-family: Cochin-Regular
+  line-height: 1.5
 
 a
   text-decoration: none
@@ -44,7 +53,7 @@ h4
 h5
   font-size: .9rem
 h6
-  font-size: .7rem
+  font-size: .8rem
 
 img
   object-fit: cover
@@ -57,6 +66,9 @@ input[type="email"]
   padding: 9px 15px
   border: 1px solid lightgrey
   position: relative
+
+input[type="search"]
+  min-width: 200px
 
 label
   display: block
@@ -86,7 +98,7 @@ input:focus
 
 .wrap
   width: 100%
-  max-width: 1225px
+  max-width: 1280px
   margin: 0 auto
   padding: 0 5px
 
@@ -105,7 +117,7 @@ input:focus
   transition: box-shadow .2s linear
   &:hover
     box-shadow: 0 0 4px grey
-
+    
 @import "_header.sass"
 @import "_main.sass"
 @import "_footer.sass"

@@ -3,21 +3,19 @@ mixin navigation__item(link, name)
   li.navigation__item
     a(href= link).navigation__link= name
 
-mixin category__item(link, name)
-  li.category__item
-    a(href= link).category__link= name
-
-mixin min-article(img, alt, h6, comment, like)
+mixin min-article(link, img, alt, h6, comment, like)
   .min-article__block
-    img(src= img, alt= alt)
-    .min-article__block-info
-      h6= h6
-      .comment-like
-        .comment
-          = comment
-        .like
-          = like
+    a(href= link)
+      img(src= img, alt= alt)
+      .min-article__block-info
+        h6= h6
+        .comment-like
+          .comment
+            = comment
+          .like
+            = like
 
+// Online course
 mixin online-course
   .course-wrap
     .online-course
@@ -50,11 +48,77 @@ mixin online-course
               | человек
             input(type="button" value="Записаться").button
 
+mixin theme-blog(category, title, month, year, comment, like, img, alt, p, href)
+  .theme-blog
+    span= category
+    h3= title
+    .theme-blog__date-like
+      .date
+        span= month
+        span= year
+      .comment-like
+        .comment
+          = comment
+        .like
+          = like
+    img(src= img, alt= alt)
+    p= p
+    a(href= href).more-link Читать
+
+// Near event
+mixin near-event(img, alt, date1, date2, date3, course, h5, p, enroll, when)
+  .near-event__block
+    img(src= img, alt= alt)
+    .near-event__about
+      .near-event__date-duration
+        span= date1
+        span= date2
+        span= date3
+      .near-event__text-enroll
+        .near-event__text
+          p= course
+          h5= h5
+          p= p
+        .near-event__enroll
+          a(href= enroll).button Записаться
+          p= when
+
+// Comment's
+mixin comment(img, name, h5, date, text)
+  .comment
+    img(src= img, alt="")
+    .comment-text
+      span= name
+      h5= h5
+      span= date
+      p= text
+          
+// Sidebar
+mixin author
+  .min-author
+    img(src="img/Irina-Koolish.jpg", alt="Ирина Кулиш")
+    h5 Здравствуйте, уважаемые читатели!
+    p 
+      | Меня зовут Ирина Кулиш. Моя специальность по диплому практический 
+      | психолог. Аутизм — это не просто «слово на букву А». 25 лет работы с аутичными детьми и их 
+      | родителями — это 25 лет моей жизни.
+    a(href="about.html").more-link Узнать подробнее
+
 mixin subscribe
-  .aside
   .subscribe
     h4 Подпишитесь на рассылку
     p Получайте свежие статьи на ваш электронный адрес 
     form(action="get")
       input(type="email" placeholder="Ваш электронный адрес")
       input(type="button" value="Подписаться").button
+
+mixin category__item(link, name)
+  li.category__item
+    a(href= link).category__link= name
+
+
+
+
+
+
+

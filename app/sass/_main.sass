@@ -1,6 +1,9 @@
 #content
   display: flex
 
+.content
+  width: inherit
+
 .wrap#content
   padding-bottom: 80px;
 
@@ -25,9 +28,10 @@
     margin-top: 15px
 
 .more-link
-  max-width: 135px
+  width: 100%
+  max-width: 150px
   display: inline-block
-  padding: 10px 0 5px
+  padding: 10px 0 0
   font-weight: bold
   color: black
   position: relative
@@ -39,7 +43,7 @@
     background: #7395a5
     position: absolute
     left: 0
-    bottom: -4px
+    bottom: -7px
   &:hover::after
     animation: link-more 0.5s ease-in-out
     animation-fill-mode: forwards
@@ -147,12 +151,12 @@
       max-width: 50px
       font-weight: bold
       color: black
+      margin-bottom: 20px
   .button
     margin: 0 auto
 
 .comment-like
-  max-width: 150px
-  margin: 10px 0 10px -5px
+  min-width: 135px
   display: flex
   justify-content: space-around
   .comment,
@@ -179,8 +183,10 @@
 // Event's
 .near-event
   &__block
-    max-width: 500px
-    margin: 10px auto
+    max-width: 250px
+    margin: 10px auto 35px
+  &__about
+    border-bottom: 2px dotted #e4eff4
   &__text
     & p:first-child
       color: grey
@@ -219,16 +225,22 @@
     margin: 10px 0
   .button
     margin: 0 auto
+  .near-event__enroll
+    p
+      padding-top: 5px
+      text-align: center
+      font-size: .825rem
 
 // Subscribe-category
-.aside
-  width: 25%
-  margin-left: 40px
+.sidebar
+  width: 20%
+  margin-left: 64px
   display: none
 
 .subscribe
-  padding: 70px 30px
-  background: #f7fafb
+  padding: 40px 20px
+  background: #f7fafb, url("../img/EllipseBgSubscribe.png") no-repeat center center
+  background-size: cover
   text-align: center
   border-radius: 50%
   p
@@ -236,7 +248,9 @@
     font-size: .9rem
   input
     width: 100%
-    margin: 0
+    max-width: 225px
+    margin: 0 auto
+    text-align: right
   input:first-child
     margin-bottom: 12px
   form
@@ -244,13 +258,21 @@
     position: relative
   form:before
     content: ''
-    width: 23px
-    height: 23px
+    width: 20px
+    height: 20px
     background: url("../img/message.svg") no-repeat center center
     background-size: contain
     position: absolute
     left: 7px
     top: 54px
+
+.min-author
+  margin-bottom: 30px
+  img
+    max-width: 250px
+  h5
+    padding: 15px 0 10px
+  
 
 .category,
 .min-article
@@ -274,7 +296,10 @@
 
 .min-article
   &__block
-    margin: 16px 0
+    margin: 15px 0
+    a
+      display: flex
+      color: black
   h4
     padding-bottom: 10px
     border-bottom: 1px solid #dadada
@@ -285,6 +310,25 @@
     object-fit: cover
   .button
     max-width: 100%
+
+.title
+  margin-bottom: 30px
+  font-weight: lighter
+
+// Double-table
+
+.double-table
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+
+@media screen and (min-width: 480px)
+  .near-event
+    &__block
+      max-width: 420px
+      display: flex
+      align-items: center
+      flex-direction: column
 
 // Responsive
 @media screen and (min-width: 540px)
@@ -347,7 +391,8 @@
     padding: 0 20px
     &__block
       max-width: 100%
-      display: flex
+      align-items: unset
+      flex-direction: unset
     &__about
       margin-left: 10px
     &__date-duration
@@ -357,7 +402,9 @@
       span
         margin-right: 5px
     &__text-enroll
-      height: 255px
+      height: auto
+      max-height: 250px
+      margin-bottom: 30px
       display: flex
       flex-direction: column
       justify-content: space-between
@@ -368,6 +415,13 @@
     padding: 0 20px
     &__block
       max-width: 300px
+
+  // Column
+  .double-table
+    flex-direction: unset
+
+  .column
+    width: 49%
 
 @media screen and (min-width: 740px)
   .briefly-more
@@ -383,10 +437,6 @@
       padding: 11px 15px
     .button
       margin: 23px auto 0
-
-  #header,
-  #content
-    padding: 0 1rem
 
   // Article's
   .new-articles
@@ -421,12 +471,20 @@
   .new-articles
     margin-bottom: 30px
 
+  .more-link
+    &:after
+      height: 5px
+
+  // Column
+  .column
+    width: 48%
+
 @media screen and (min-width: 1024px)
   .content
     width: 75%
     margin: 0
   
-  .aside
+  .sidebar
     display: block
 
   .briefly-more
@@ -439,6 +497,10 @@
   .course-wrap,
   .new-articles
     margin-bottom: 50px
+
+  // Column
+  .column
+    width: 47%
 
 @media screen and (min-width: 1200px)
   .new-articles
@@ -465,10 +527,12 @@
 
   .subscribe
     form:before
-      left: 23px
+      left: 13px
+    input
+      text-align: center;
 
   .more-link
-    max-width: 170px
+    max-width: 155px
     font-size: 1.2rem
 
   .briefly-more,

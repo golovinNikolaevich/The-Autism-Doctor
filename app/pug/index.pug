@@ -51,41 +51,11 @@ block content
       // Event's
       article.near-event
         h3 Ближайщие события
-        .near-event__block
-          img(src="../img/article_event/event_1.png", alt="Событие")
-          .near-event__about
-            .near-event__date-duration
-              span 4-7 мая
-              span 12 лекций по 1,5 часа
-              span Онлайн
-            .near-event__text-enroll
-              .near-event__text
-                p Курс
-                h5 Как помочь ребенку справиться со страхами
-                p Курс для родителей аутичных детей и психологов, начинающих работу с аутичными детьми. 
-                  | Продолжу рассказ об особенностях речи Никиты. Безглагольность — это не просто его 
-                  | речевое своеобразие.
-              .near-event__enroll
-                a(href="#").button Записаться
-        .near-event__block
-          img(src="../img/article_event/article_2.png", alt="Событие")
-          .near-event__about
-            .near-event__date-duration
-              span 4-7 мая
-              span 12 лекций по 1,5 часа
-              span Онлайн
-            .near-event__text-enroll
-              .near-event__text
-                p Вебинар
-                h5 Как помочь ребенку справиться со страхами
-                p Курс для родителей аутичных детей и психологов, начинающих работу с аутичными детьми. 
-                  | Продолжу рассказ об особенностях речи Никиты. Безглагольность — это не просто его 
-                  | речевое своеобразие.
-              .near-event__enroll
-                a(href="#").button Записаться
+        +near-event("../img/article_event/event_1.png", "Событие", "4-7 мая", "12 лекций по 1,5 часа", "Онлайн", "Курс", "Как помочь ребенку справиться со страхами", "Курс для родителей аутичных детей и психологов, начинающих работу с аутичными детьми. Продолжу рассказ об особенностях речи Никиты. Безглагольность — это не просто его речевое своеобразие.", "course/course.html")
+        +near-event("../img/article_event/article_2.png", "Вебинар", "4-7 мая", "12 лекций по 1,5 часа", "Онлайн", "Курс", "Как помочь ребенку справиться со страхами", "Курс для родителей аутичных детей и психологов, начинающих работу с аутичными детьми. Продолжу рассказ об особенностях речи Никиты. Безглагольность — это не просто его речевое своеобразие.", "#")
         a(href="#").button Смотреть раписание
     // Subscribe-category
-    .aside
+    .sidebar
       +subscribe
       .category
         h4 Рубрики
@@ -100,10 +70,10 @@ block content
           +category__item("#", "Аутизм в мире")
       .min-article
         h4 Популярные статьи
-        +min-article("img/article_event/article_min_1.png", "Статья", "Не хочу быть призовой лошадью", "46", "107")
-        +min-article("img/article_event/article_min_2.png", "Статья", "Не хочу быть призовой лошадью", "46", "107")
-        +min-article("img/article_event/article_min_3.png", "Статья", "Не хочу быть призовой лошадью", "46", "107")
-        +min-article("img/article_event/article_min_4.png", "Статья", "Не хочу быть призовой лошадью", "46", "107")
-        +min-article("img/article_event/article_min_5.png", "Статья", "Не хочу быть призовой лошадью", "46", "107")
-        .button Читать блог
+        +min-article("#", "img/article_event/article_min_1.png", "Статья", "Не хочу быть призовой лошадью", "46", "107")
+        +min-article("#", "img/article_event/article_min_2.png", "Статья", "Не хочу быть призовой лошадью", "46", "107")
+        +min-article("#", "img/article_event/article_min_3.png", "Статья", "Не хочу быть призовой лошадью", "46", "107")
+        +min-article("#", "img/article_event/article_min_4.png", "Статья", "Не хочу быть призовой лошадью", "46", "107")
+        +min-article("#", "img/article_event/article_min_5.png", "Статья", "Не хочу быть призовой лошадью", "46", "107")
+        a(href="#").button Читать блог
       .community
