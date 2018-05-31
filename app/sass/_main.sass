@@ -3,6 +3,7 @@
 
 .content
   width: inherit
+  margin: 0 auto
 
 .wrap#content
   padding-bottom: 80px;
@@ -166,12 +167,12 @@
   .like:before
     content: ''
     display: block
-    width: 15px
-    height: 15px
+    width: 13px
+    height: 13px
     background-repeat: no-repeat
     background-position: center center
     position: absolute
-    top: 2px
+    top: 3px
     left: -20px
   .comment:before
     background: url("../img/comment.svg")
@@ -316,11 +317,61 @@
   font-weight: lighter
 
 // Double-table
-
 .double-table
   display: flex
   flex-direction: column
   justify-content: space-between
+
+// Course-entry-form
+.course-entry__form
+  padding: 15px
+  background: #fbfcfd
+  border: 1px solid #dadada
+  h4
+    padding: 5px 0 10px
+    text-align: center
+  &-number,
+  &-mail
+    width: 100%
+  label
+    position: relative
+  input,
+  label
+    width: 100%
+    margin-bottom: 10px
+  .submit label:after
+    top: 39px
+  .button
+    margin: 10px auto
+
+// Share
+.share
+  width: 100%
+  padding: 20px
+  text-align: center
+  a
+    width: inherit
+    max-width: 250px
+    height: 45px
+    display: inline-block
+    background: url("../img/facebook.svg") no-repeat center center
+    background-size: 20px
+    border: 1px solid #3eb5f1
+    transition: all .3s linear
+  a:hover
+    background: #3eb5f1 url("../img/facebookHover.svg") no-repeat center center
+    background-size: 20px
+    box-shadow: 0 0 5px #3eb5f1
+
+// Min facebook
+.min-fb
+  width: 35px
+  height: 35px
+  padding: 5px
+  display: inline-block
+  background: url(../img/facebook.svg) center center no-repeat
+  background-size: 20px
+  border: 3px solid #3eb5f1
 
 @media screen and (min-width: 480px)
   .near-event
@@ -423,12 +474,28 @@
   .column
     width: 49%
 
+  // Course-entry-form
+  .course-entry__form
+    padding: 30px 30px 15px
+    label
+      margin: 16px 0
+    &-number
+      margin-right: 25px
+    .submit label:after
+      top: 44px
+    form > .submit:nth-of-type(2)
+      display: flex
+    .button
+      margin: 25px auto 20px
+
 @media screen and (min-width: 740px)
   .briefly-more
     p
       font-size: 1.3rem
 
   .online-course
+    &__description
+      padding: 30px 40px
     .submit__input
       &:last-of-type
         margin: 0
@@ -482,7 +549,7 @@
 @media screen and (min-width: 1024px)
   .content
     width: 75%
-    margin: 0
+    margin: 0 auto
   
   .sidebar
     display: block
@@ -497,6 +564,10 @@
   .course-wrap,
   .new-articles
     margin-bottom: 50px
+
+  .online-course
+    &__description
+      padding: 50px 60px
 
   // Column
   .column

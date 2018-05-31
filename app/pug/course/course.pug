@@ -1,1 +1,37 @@
-include ../_include/_header.pug
+extends ../_include/_header.pug
+
+block link
+  link(rel="stylesheet", href="../css/style.css")
+  link(rel="stylesheet", href="../css/course.css")
+
+block header
+  header#header
+    .header.wrap
+      a(href="../index.html").header-logo
+        h1 Думай вместе
+        p С Ириной Кулиш
+      .navigation
+        a(href="#").menu-link
+          span
+        .menu
+          ul.nav
+            +navigation__item("../index.html", "Главная")
+            +navigation__item("../blog.html", "Блог")
+            +navigation__item("../schedule.html", "Расписание")
+            +navigation__item("../testimonials.html", "Отзывы")
+            +navigation__item("../about.html", "Об авторе")
+      .search-and-language
+        form(action="get")
+          .search
+            label(for="")
+            input(type="search" placeholder="Например аутизм")
+            a(href="#") Ру
+
+block content
+  main#content.wrap
+    .content
+      +course-entry("Курс", "Аутизм и аутоподобные состояния", "../../img/entry_course/entry_1.jpg", "Img", "16 мая, 20:00", "- 12 лекций по 1, 1,5 часа", "- 2 занятия в неделю(вторник-четверг)", "2000", "Онлайн", "Среди множества версий о причинах аутизма есть и такая: в основе лежит тотальный страх перед окружающим миром. Аутизм, как броня, защищает от его опасносностей: лучше не видеть, не слышать, не общаться, свести все контакты к минимуму, — тогда и стрессов от столкновения с ним будет меньше. Страх перед внешними угрозами загоняет в скорлупу, обволакивает, как кокон. Не берусь судить о степени научности этой теории, но, анализируя поведение некоторых детей, я думаю, что что-то в этом есть. Аутизм очень разноликий, и среди всех его форм (сейчас уже говорят о том, что их 14) есть, возможно, и такая «пугливая» модель.", "- Что такое аутизм;", "- Как понять своего ребенка;", "- Как помочь ребенку справиться со страхами;", "- Что делать, если уже ничего не хочется делать.", "начальный / средний.")
+
+block script
+  <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+  script(src="../javascript/menu.js")
