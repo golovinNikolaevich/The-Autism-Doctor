@@ -1,5 +1,6 @@
 .theme-blog
 	width: 100%
+	max-width: 370px
 	margin-bottom: 20px
 	display: inline-block
 	color: black
@@ -22,8 +23,25 @@
 	.more-link
 		max-width: 50px
 
+@media screen and (min-width: 640px)
+	.blog-double-table
+		align-items: unset
+		flex-direction: unset
+
+	.theme-blog
+		max-width: 300px
+
+@media screen and (min-width: 740px)
+	.theme-blog
+		max-width: 340px
+
 @media screen and (min-width: 860px)
 	.theme-blog
+		max-width: 360px
 		margin-bottom: 30px
 		.more-link
 			max-width: 60px
+
+@media screen and (min-width: 1280px)
+  .theme-blog
+    max-width: 380px
