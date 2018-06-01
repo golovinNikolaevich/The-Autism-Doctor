@@ -42,11 +42,42 @@
 	p
 		padding: 10px 0
 
+.course-entry__form
+  width: 100%
+  max-width: 300px
+  margin: 0 -150px
+  position: fixed
+  top: 10%
+  left: 50%
+  box-shadow: 0 0 35px grey
+
+.modal-close
+  width: 20px
+  height: 20px
+  background: url(../img/close.svg)
+  position: absolute
+  top: 20px
+  right: 20px
+
+.course-entry__comment
+  label:after
+    top: 57
+
+@media screen and (min-width: 480px)
+  .course-entry__form
+    max-width: 400px
+    margin: 0 -200px
+
 @media screen and (min-width: 640px)
   .title-comments
     flex-direction: unset
+
   .write-comment
     padding-left: 32px
+
+  .course-entry__form
+    max-width: 500px
+    margin: 0 -250px
 
 @media screen and (min-width: 1024px)
 	.column .comment
@@ -54,3 +85,4 @@
 
 	.comment-text
 		max-width: 320px
+

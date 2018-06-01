@@ -63,10 +63,15 @@ img
 input[type="text"],
 input[type="search"],
 input[type="number"],
-input[type="email"]
+input[type="email"],
+textarea
+  height: 40px
   padding: 9px 15px
   border: 1px solid lightgrey
   position: relative
+
+textarea
+  height: auto
 
 input[type="search"]
   min-width: 200px
@@ -88,6 +93,15 @@ input::-webkit-search-cancel-button,
 input::-webkit-search-results-button,
 input::-webkit-search-results-decoration
   margin-right: 10px
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+  -webkit-appearance: none
+  margin: 0
+
+input[type='number']
+    -moz-appearance: textfield
+
 
 input::placeholder
   color: lightgrey

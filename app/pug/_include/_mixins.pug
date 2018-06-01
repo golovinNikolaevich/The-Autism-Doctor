@@ -1,7 +1,7 @@
 //- Mixin for header navigation menu
-mixin navigation__item(link, name)
+mixin navigation__item(link, name, open)
   li.navigation__item
-    a(href= link).navigation__link= name
+    a(href= link, class= open).navigation__link= name
 
 mixin min-article(link, img, alt, h6, comment, like)
   .min-article__block
@@ -14,6 +14,14 @@ mixin min-article(link, img, alt, h6, comment, like)
             = comment
           .like
             = like
+
+mixin header-search
+  .search-and-language
+    form(action="get")
+      .search
+        label(for="")
+        input(type="search" placeholder="Например аутизм")
+        a(href="#") Ру
 
 //- Online course
 mixin online-course
@@ -92,6 +100,26 @@ mixin comment(img, name, h5, date, text)
       h5= h5
       span= date
       p= text
+
+//- Comment's modal
+mixin comment-modal
+  .comment-modal
+    .course-entry__form
+      a(href="#").modal-close
+      h4 Напишите отзыв
+      form(action="get")
+        .submit
+          label(for="name").user Как вас зовут?
+          input(type="text" placeholder="ФИО")
+        .submit
+          .course-entry__form-mail
+            label(for="email").email Электронный адрес
+            input(type="email" placeholder="Ваш электронный адрес")
+        .submit
+          .course-entry__comment
+            label(for="textarea") Расскажите про ваш опыт работы с Ириной Кулиш
+            textarea(name="textarea", cols="30", rows="10").textarea
+        a(href="#").button Отправить
 
 //- Course entry
 mixin course-entry(category, h2, srcImg, alt, time, lection, dur, price, h6_1, text, li_1, li_2, li_3, li_4, level)

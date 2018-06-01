@@ -1,5 +1,23 @@
 extends _include/_header.pug
 
+block header
+  header#header
+    .header.wrap
+      a(href="#").header-logo
+        h1 Думай вместе
+        p С Ириной Кулиш
+      .navigation
+        a(href="#").menu-link
+          span
+        .menu
+          ul.nav
+            +navigation__item("index.html", "Главная", "menu-active-link")
+            +navigation__item("blog.html", "Блог")
+            +navigation__item("schedule.html", "Расписание")
+            +navigation__item("testimonials.html", "Отзывы")
+            +navigation__item("about.html", "Об авторе")
+      +header-search
+
 block content
   main#content.wrap
     .content

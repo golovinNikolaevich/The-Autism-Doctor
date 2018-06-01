@@ -3,6 +3,24 @@ block link
   link(rel="stylesheet", href="css/style.css")
   link(rel="stylesheet", href="css/testimonials.css")
 
+block header
+  header#header
+    .header.wrap
+      a(href="#").header-logo
+        h1 Думай вместе
+        p С Ириной Кулиш
+      .navigation
+        a(href="#").menu-link
+          span
+        .menu
+          ul.nav
+            +navigation__item("index.html", "Главная")
+            +navigation__item("blog.html", "Блог")
+            +navigation__item("schedule.html", "Расписание")
+            +navigation__item("testimonials.html", "Отзывы", "menu-active-link")
+            +navigation__item("about.html", "Об авторе")
+      +header-search
+
 block content
   main#content.wrap
     .content
@@ -10,7 +28,8 @@ block content
         h1.title Отзывы
         .write-comment
           p 6 отзывов
-          a(href="#") Написать отзыв
+          a(href="#").open-modal Написать отзыв
+        +comment-modal
       article.double-table
         .column
           +comment("img/comment_photo/photo_1.jpg", "Люблю Семец", "«Спасибо за те результаты,которых дистиг мой внук Костик...»", "12 мая 2018", "Ирина Ивановна,безмерно благодарна вам за ваш титанический труд с особенными детками, за результаты, которых дистиг мой внук Костик. Низкий вам поклон, крепкого здоровья, такие специалисты не должны оставаться в тени, их все должны знать в лицо, вы человек от Бога....")

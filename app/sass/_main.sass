@@ -101,6 +101,7 @@
       top: 3px
     input
       width: 100%
+      height: 40px
       padding: 10px 15px
       margin-bottom: 10px
   .submit
@@ -128,6 +129,7 @@
 
 // Article's
 .new-articles
+  margin-bottom: 20px
   &__all
     margin: 20px 0
     display: flex
@@ -135,6 +137,7 @@
     flex-wrap: wrap
   &__block
     max-width: 500px
+    margin: 20px 0
     display: flex
     flex-direction: column
     img
@@ -158,6 +161,7 @@
 
 .comment-like
   min-width: 135px
+  max-width: 200px
   display: flex
   justify-content: space-around
   .comment,
@@ -264,8 +268,8 @@
     background: url("../img/message.svg") no-repeat center center
     background-size: contain
     position: absolute
-    left: 7px
-    top: 54px
+    left: 12px
+    top: 61px
 
 .min-author
   margin-bottom: 30px
@@ -374,6 +378,33 @@
   background: url(../img/facebook.svg) center center no-repeat
   background-size: 20px
   border: 3px solid #3eb5f1
+
+// Comment modal
+.comment-modal
+  width: 100vw
+  height: 100vh
+  background: rgba(144, 199, 224, 0.5)
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  z-index: 999
+  display: none
+
+.open-modal
+  display: block
+
+.textarea
+  width: 100%
+
+.course-entry__comment
+  label:after
+    background: url("../img/underline-button.svg") center center no-repeat
+    background-size: contain
+
+.menu-active-link
+  background: rgba(244, 248, 249, 0.2)
+  color: #5c8699
 
 @media screen and (min-width: 480px)
   .near-event
@@ -485,11 +516,12 @@
     &-number
       margin-right: 25px
     .submit label:after
-      top: 44px
+      top: 47px
     form > .submit:nth-of-type(2)
       display: flex
     .button
       margin: 25px auto 20px
+
 
 @media screen and (min-width: 740px)
   .briefly-more
@@ -502,11 +534,13 @@
     .submit__input
       &:last-of-type
         margin: 0
+    label:after
+      top: 16px
     input
       margin: 3px 0 0
       padding: 11px 15px
     .button
-      margin: 23px auto 0
+      margin: 20px auto 0
 
   // Article's
   .new-articles
@@ -514,11 +548,18 @@
     border: 3px dashed #e4eff4
     &__block
       width: 250px
+      margin: 10px 5px
 
   .new-articles__block
     img
       width: 240px
       height: 215px
+
+  .share
+    max-width: 600px
+    margin: 0 auto 30px
+    display: flex
+    justify-content: space-between
 
 @media screen and (min-width: 860px)
   #content
@@ -575,6 +616,16 @@
   // Column
   .column
     width: 47%
+
+  .double-table
+    justify-content: space-between
+
+  .navigation .menu .menu-active-link
+    background: #f4f8f9
+    color: #5c8699
+
+  .online-course__form-entry
+    padding: 30px
 
 @media screen and (min-width: 1200px)
   .new-articles

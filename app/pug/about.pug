@@ -3,6 +3,25 @@ block link
   link(rel="stylesheet", href="css/style.css")
   link(rel="stylesheet", href="css/about.css")
 
+block header
+  header#header
+    .header.wrap
+      a(href="#").header-logo
+        h1 Думай вместе
+        p С Ириной Кулиш
+      .navigation
+        a(href="#").menu-link
+          span
+        .menu
+          ul.nav
+            +navigation__item("index.html", "Главная")
+            +navigation__item("blog.html", "Блог")
+            +navigation__item("schedule.html", "Расписание")
+            +navigation__item("testimonials.html", "Отзывы")
+            +navigation__item("about.html", "Об авторе", "menu-active-link")
+      +header-search
+
+
 block content
   main#content.wrap
     .content
